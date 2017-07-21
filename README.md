@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
+* Emmanuel Opoku
+  Full stack web developer serving all your web development needs.
+  constantly improving skills for better user experience get in touch 
+  if you want to know more.
 
-Things you may want to cover:
+* Ruby developer 
 
-* Ruby version
+* First app v1.0
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
