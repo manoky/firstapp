@@ -1,3 +1,95 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+$font-stack: 'Alegreya', serif;
+$h-color: #333;
+
+h1, h2 {
+  color: $h-color;
+  text-align: center;
+
+}
+
+h1 {
+  font: 2em $font-stack;
+}
+
+h2 {
+  font: 1.5em $font-stack;
+}
+
+
+
+// sticky footer style starts here
+*{
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.footer, .page-wrap:after{
+  height: 60px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  
+}
+// sticky footer ends here
+
+
+// custom navbar styles starts here
+.navbar-custom {
+	background-color:#333;
+  border-radius:0;
+	text-transform: uppercase;
+	height: 70px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color:#fff;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+  color: #fff;
+  background-color:#f45750;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+  text-decoration: none;
+  background-color:transparent;
+	color: #f45750;
+}
+
+.navbar-custom .navbar-nav {
+	margin-right: 15px;
+}
+
+
+.navbar-custom .navbar-toggle {
+  background-color:#fff;
+	border: 1px solid #f45750;
+}
+
+.navbar-custom .icon-bar {
+  background-color:#f45750;
+}
