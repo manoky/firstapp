@@ -27,9 +27,10 @@
         <div class="collapse navbar-collapse navbar-right" id="collapsedNav">
           <ul class="nav navbar-nav">
             <!--nav-links here-->
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><%= link_to "Home", index_path %></li>
+            <li><%= link_to "Products", products_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
           </ul>
         </div><!--nav-links ends-->
       </div><!--container-fluid ends-->
