@@ -5,6 +5,6 @@ class StaticPagesController < ApplicationController
   end
   def contact
   end
-  def show
+  def products
   end
 end
