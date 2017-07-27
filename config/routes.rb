@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  get '/products', to:'products#show'
+  get '/products', to:'products#index'
 
   get  '/about',   to: 'static_pages#about'
 
