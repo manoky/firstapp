@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale =1">
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body data-target=".navbar">
     <div class="page-wrap">
-    <nav class ="navbar navbar-custom">
+    <!--navigation starts-->
+    <nav class ="navbar navbar-custom" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type= "button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#collapsedNav">
+          <button type= "button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -24,17 +25,18 @@
             <a href="#"><%= image_tag("icon.png", size: "40")%></a>
           </div><!--navbar-brand ends-->
         </div><!--navbar-header ends-->
-        <div class="collapse navbar-collapse navbar-right" id="collapsedNav">
-          <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav" role="navigation">
             <!--nav-links here-->
             <li class="active"><%= link_to "Home", index_path %></li>
-            <li><%= link_to "Products", products_path %></li>
+            <li><a href="../products/">Products</a></li>
+            <%# <li><%= link_to "Products", products_path %></li> %>
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
           </ul>
         </div><!--nav-links ends-->
       </div><!--container-fluid ends-->
-    </nav>
+    </nav> <!--navigation ends-->
     <%= yield %>
     </div><!--page-wrap-->
   <footer class="footer">
