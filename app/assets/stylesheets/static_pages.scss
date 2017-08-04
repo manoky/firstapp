@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
 
 $font-stack: 'Alegreya', serif;
-$h-color: #333;
+$h-color: #f45750;
+$p-color: #fff;
 
 h1, h2 {
   color: $h-color;
@@ -20,6 +21,9 @@ h2 {
   font: 1.5em $font-stack;
 }
 
+p {
+  color:  $p-color;
+}
 
 
 // sticky footer style starts here
@@ -93,4 +97,20 @@ html, body {
 
 .navbar-custom .icon-bar {
   background-color:#f45750;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+ 
+// carousel styles
+
+.carousel-inner>.item>img {
+  margin: auto;
+  width: 1400px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px ;
 }
