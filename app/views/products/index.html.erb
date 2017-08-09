@@ -1,18 +1,10 @@
+<% provide(:title, 'Products') %>
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
 
-  <%# <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>color</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> %>
 
-  <div class="containter-fluid">
+  <div class="containter-fluid products-page">
     <div class="row">
       <%= render @products %>
     </div><!--/row-->

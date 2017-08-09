@@ -21,10 +21,13 @@ h2 {
   font: 1.5em $font-stack;
 }
 
-p {
+.carousel-caption p {
   color:  $p-color;
 }
 
+.about-page p {
+  text-align: center;
+}
 
 // sticky footer style starts here
 *{

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
+  resources :user, except: [:index]
 
   root 'static_pages#landing_page'
 
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   get '/products', to:'products#index'
 
   get  '/about',   to: 'static_pages#about'
-
 
   get  '/contact', to: 'static_pages#contact'
 
