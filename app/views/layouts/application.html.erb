@@ -33,6 +33,14 @@
             <li><%= link_to "Products",products_path %></li>
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
+            <li> <%= form_with(url: products_path,class:'navbar-form', method: 'get') do |form| %>
+              <div class="form-group">
+                <%= form.label :q,  'Search for:' %> 
+                <%= form.text_field :q, id: 'q', value: params[:q],class:'form-control', placeholder:'Search' %>
+                <%= form.submit 'Search',class:'btn btn-default' %>
+                <% end %>
+              </div><!--form-group end-->
+            </li>
           </ul>
         </div><!--nav-links ends-->
       </div><!--container-fluid ends-->
