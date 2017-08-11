@@ -23,8 +23,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: sqlite3
-  encoding: unicode
+  <<: *default
   database: ruby-getting-started_development
 
   # The specified database role being used to connect to postgres.
