@@ -1,34 +1,22 @@
 <% provide(:title, 'Contact') %>
 <h1>Contact Us</h1>
- <div class="container" id="contact-info">
-      <div class="row">
-        <div class="hidden-xs col-md-4">
-          <div class="info-spacing">
-            <span class="glyphicon glyphicon-envelope"></span> Email: info@bikeberlin.com
-          </div>
-          <div class="info-spacing">
-            <span class="glyphicon glyphicon-phone-alt"></span> Phone: +491711111
-          </div>
-          <div class="info-spacing"> 
-            <span class="glyphicon glyphicon-road"></span> Location: Berlin, Germany
-          </div>
-        </div><!--col-md-lg-end-->
-      <div class="col-xs-12 col-md-8 forms">
-      <form>
-        <div class="form-group">
-          <input required="required" name="name" class="form-control" type="text" placeholder="Name" id="name"
-          title="Enter Your Name">
-          <p id="form-name"></p>
-          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone number">
-          <p id="form-phone"></p>
-        </div>
-        <div class="form-group">
-          <input required="required" name="email" class="form-control" type="email" placeholder="Email Address" id="email" title="Enter Your Email Address">
-          <p id="form-email"></p>
-        </div>
-        <textarea required="required" class="form-control" style="resize:none" cols="40" rows="5" id="message-box"></textarea>
-        <button type="submit" class="btn btn-default btn-block" id="submit-btn">Submit</button>
-      </form>
+
+<%= flash[:notice] %>
+<div class="container">
+<%= form_tag("/static_pages/thank_you") do %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= text_field_tag(:name,nil, class: "form-control", placeholder: "Enter Name") %>
+      </div>        
+      <div class="form-group">
+        <%= text_field_tag(:email,"Email Address", class: "form-control", placeholder: "Enter Email") %>
       </div>
-      </div><!--row-->
-    </div><!--container-fluid-->
+      <div class="form-group">
+        <%= text_area_tag(:message,nil, class: "form-control", placeholder: "Enter Message") %>
+      </div>        
+    </div>
+  </div>
+  <%= submit_tag("Send",class:"btn btn-default") %>   
+<% end %>
+</div><!--container end-->
