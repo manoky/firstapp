@@ -99,4 +99,5 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
   config.action_mailer.default_url_options = { host: 'https://buyberlinbikes.herokuapp.com' }
+  config.assets.precompile += %w( *.css *.erb *.scss *.js *.coffee *.png *.jpg *.ico *.gif)
 end
