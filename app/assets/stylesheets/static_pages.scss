@@ -117,6 +117,33 @@ html, body {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 2px ;
 }
-//contact page forms styles
 
+//devise views page-registration - sign in styles
 
+.form-signin {
+  max-width: 330px;
+  margin: auto;
+  padding: 15px;
+}
+
+.signup-btn {
+  background-color: #f45750;
+  color: #fff;
+}
+
+.signup-login-links {
+  position: relative;
+  left: 48%;
+}
+
+.form-signin input[type="email"],
+.form-signin input[type="password"]  {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px;
+  font-size: 16px;
+  position: relative;
+  height: auto;
+
+}
