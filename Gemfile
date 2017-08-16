@@ -59,4 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
 
+#cancancan gem for authorization control
+gem 'cancancan','~> 1.10'
+
 ruby "2.4.1"

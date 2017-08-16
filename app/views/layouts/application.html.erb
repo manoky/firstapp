@@ -55,8 +55,12 @@
 
     <%= yield %>
      <!--flash notification tags-->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+     <%if notice %>
+    <p class="alert alert-success" role="alert"><%= notice %></p>
+    <% end%>
+    <%if alert %>
+    <p class="alert alert-danger" role="alert"><%= alert %></p>
+    <% end %>
     <!--flash notification tags end-->
     </div><!--page-wrap-->
   <footer class="footer">
