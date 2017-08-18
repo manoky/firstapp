@@ -1,9 +1,9 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url('https://fonts.googleapis.com/css?family=Alegreya');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-$font-stack: 'Alegreya', serif;
+$font-stack: 'Roboto', sans-serif;
 $h-color: #f45750;
 $p-color: #fff;
 
@@ -13,8 +13,17 @@ h1, h2 {
 
 }
 
+body {
+  line-height: 1.5;
+  font-family: $font-stack;
+  font-weight: 600;
+  color: #444;
+}
+
 h1 {
   font: 2em $font-stack;
+  
+ 
 }
 
 h2 {
@@ -136,6 +145,11 @@ html, body {
   left: 48%;
 }
 
+.btn-color-all {
+  background-color:#f45750;
+  color: #fff;
+}
+
 .form-signin input[type="email"],
 .form-signin input[type="password"]  {
   margin-bottom: -1px;
@@ -147,3 +161,8 @@ html, body {
   height: auto;
 
 }
+
+.glyphicon-usd {
+  font-size: 0.9em;
+} 
+
