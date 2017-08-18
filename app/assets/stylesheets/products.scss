@@ -8,6 +8,7 @@
 .products-page {
     padding: 0 20px;
   p{
+    font-size: small;
     text-align: center;
   }
   .row {
@@ -31,10 +32,22 @@
 //price column on product show page style
 
 .price-col {
-  padding-top: 360px;
+  padding-top: 245px;
   background-color:#f2f8fd;
+  border: none;
+  box-shadow: none;
+}
+.thaumbnail-img-col,
+.price-col {
+  border: none;
+  box-shadow: none;
+
 }
 
 .product-color {
   margin: 10px 0;
+}
+
+.form-width-size {
+  max-width: 330px;
 }
