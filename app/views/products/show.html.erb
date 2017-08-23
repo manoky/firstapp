@@ -18,7 +18,22 @@
     </div>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail price-col">
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
+      <!--comment ratings-->
+        <p>
+      <strong>Highest rating:</strong>
+        <%= @product.highest_rating_comment.rating %>
+        <%= @product.highest_rating_comment.body %>
+    </p>
+     <p>
+      <strong>Lowest rating:</strong>
+        <%= @product.lowest_rating_comment.rating %>
+        <%= @product.lowest_rating_comment.body %>
+    </p>
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>">
+        <!-- comment end-->
+        </div> 
+        </p>
         <h3><span class="glyphicon glyphicon-usd"></span><%= @product.price %></h3>
         <div class= "product-color">
          <strong>Color:</strong>
@@ -28,6 +43,7 @@
           <p><a href="#" class="btn btn-danger btn-block btn-lg" role="button">Buy</a>
         </div>
       </div>
+
     </div><!--col end-->
   </div><!--row end-->
   <div class="row">
@@ -37,10 +53,15 @@
     </div>
   </div><!--row ends-->
   <div class ="reviews">
+  
        <%= render 'new_comment' %>
       </div>
   <%= render 'comments' %>
+
   
+  <%= paginate @comments %>
+
+
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
   

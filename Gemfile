@@ -62,4 +62,8 @@ gem 'jquery-rails'
 #cancancan gem for authorization control
 gem 'cancancan','~> 1.10'
 
+
+# kaminari gem for limiting comments for page optimization
+gem 'kaminari'
+
 ruby "2.4.1"
