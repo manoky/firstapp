@@ -19,17 +19,17 @@
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail price-col">
 
-      <!--comment ratings-->
+        <!--comment ratings-->
         <p>
-      <strong>Highest rating:</strong>
-        <%= @product.highest_rating_comment.rating %>
-        <%= @product.highest_rating_comment.body %>
-    </p>
-     <p>
-      <strong>Lowest rating:</strong>
-        <%= @product.lowest_rating_comment.rating %>
-        <%= @product.lowest_rating_comment.body %>
-    </p>
+         <strong>Highest rating:</strong>
+          <%= @product.highest_rating_comment.rating %>
+          <%= @product.highest_rating_comment.body %>
+        </p>
+        <p>
+         <strong>Lowest rating:</strong>
+          <%= @product.lowest_rating_comment.rating %>
+          <%= @product.lowest_rating_comment.body %>
+        </p>
         <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>">
         <!-- comment end-->
         </div> 
