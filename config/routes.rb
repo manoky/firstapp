@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "user_registrations" }
   
   resources :products do
     resources :comments
@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :user, except: [:index]
   resources :orders, only: [:index, :show, :create, :destroy]
 
- 
 
   root 'static_pages#landing_page'
 
