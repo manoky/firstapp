@@ -1,3 +1,46 @@
+GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: 18d0e0e5bf471ff46048bd4a1266e20cefee2217
+  branch: master
+  specs:
+    rspec-core (3.7.0.pre)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-expectations.git
+  revision: d7c74ef3843866acf3165fc500b2c6f1a3c290ee
+  branch: master
+  specs:
+    rspec-expectations (3.7.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-mocks.git
+  revision: 8b010b7a774570ceca86fb7bf6b0cc9da9a28eb0
+  branch: master
+  specs:
+    rspec-mocks (3.7.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-support.git
+  revision: 111879e6451c623fdc5d8921b79f2a57d9db64f0
+  branch: master
+  specs:
+    rspec-support (3.7.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec.git
+  revision: dcb407aa8b072c8c1cb612e1eeb99b9b754fa115
+  branch: master
+  specs:
+    rspec (3.7.0.pre)
+      rspec-core (= 3.7.0.pre)
+      rspec-expectations (= 3.7.0.pre)
+      rspec-mocks (= 3.7.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +101,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -197,6 +241,11 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.2)
+  rspec!
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-support!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

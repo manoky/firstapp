@@ -66,4 +66,10 @@ gem 'cancancan','~> 1.10'
 # kaminari gem for limiting comments for page optimization
 gem 'kaminari'
 
+#Respec gem for TDD and BDD
+%w[rspec rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
+  gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+end
+
+
 ruby "2.4.1"
