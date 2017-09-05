@@ -41,6 +41,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'pg'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -66,10 +68,7 @@ gem 'cancancan','~> 1.10'
 # kaminari gem for limiting comments for page optimization
 gem 'kaminari'
 
-#Respec gem for TDD and BDD
-%w[rspec rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
-  gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
-end
+
 
 
 ruby "2.4.1"
