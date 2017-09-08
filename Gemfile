@@ -41,6 +41,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'pg'
+  gem "factory_girl_rails", "~> 4.0"
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
