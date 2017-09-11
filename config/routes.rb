@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :orders, only: [:index, :show, :create, :destroy]
-  
+  resources :charges, only: [:new, :create]
 
 
   root 'static_pages#landing_page'
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   get  'index',    to: 'static_pages#index'
   
   post 'static_pages/thank_you'
+
+  post 'charges/create'
+
+  get 'charges/create'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end 

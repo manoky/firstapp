@@ -38,6 +38,7 @@ h2 {
 }
 
 // sticky footer style starts here
+// ===============================================
 *{
   margin: 0;
 }
@@ -66,9 +67,12 @@ html, body {
   
 }
 // sticky footer ends here
+// ===============================================
 
 
 // custom navbar styles starts here
+// ===============================================
+
 .navbar-custom {
 	background-color:#333;
   border-radius:0;
@@ -115,6 +119,7 @@ html, body {
 }
  
 // carousel styles
+// ===============================================
 
 .carousel-inner>.item>img {
   margin: auto;
@@ -127,6 +132,7 @@ html, body {
 }
 
 //devise views page-registration - sign in styles
+// ==============================================
 
 .form-signin {
   max-width: 330px;
@@ -165,3 +171,13 @@ html, body {
   font-size: 0.9em;
 } 
 
+// stripe btn
+// ===============================================
+
+.stripe {
+  padding-left: 170px;
+}
+
+.edit_links {
+  display: none;
+}

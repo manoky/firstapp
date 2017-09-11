@@ -69,7 +69,8 @@ gem 'cancancan','~> 1.10'
 # kaminari gem for limiting comments for page optimization
 gem 'kaminari'
 
-
+# Stripe payment processor gem
+gem 'stripe'
 
 
 ruby "2.4.1"

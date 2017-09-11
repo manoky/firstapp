@@ -16,9 +16,9 @@
         </div>
       </div>
     </div>
+    
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail price-col">
-
         <!--comment ratings-->
         <p>
          <strong>Highest rating:</strong>
@@ -30,17 +30,23 @@
           <%= @product.lowest_rating_comment.rating %>
           <%= @product.lowest_rating_comment.body %>
         </p>
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>">
-        <!-- comment end-->
+        <div>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>">
         </div> 
-        </p>
+        </div>
+         <!-- comment end-->
+         
+
         <h3><span class="glyphicon glyphicon-usd"></span><%= @product.price %></h3>
+
         <div class= "product-color">
          <strong>Color:</strong>
          <%= @product.colour %>
         </div>
         <div>
-          <p><a href="#" class="btn btn-danger btn-block btn-lg" role="button">Buy</a>
+          <%= form_with(url: '/charges/create') do |form| %>
+          <%= hidden_field_tag(:product_id, @product.id)%>
+          <%= render  "shared/stripe_checkout_button" %>
+          <% end %>
         </div>
       </div>
 

@@ -6,7 +6,7 @@ describe UsersController, type: :controller do
     # let (:user) { User.create!(email:'user4@mail.com', password: '12345678')}
     # let (:user2) { User.create!(email:'user5@mail.com', password:'123456789')}
     @user = FactoryGirl.create(:user)
-    @user2 = User.create!(first_name: "Jon", last_name: "Doe", email: "jondoe@gmail.com", password: "123456789", admin: true)
+    @user2 = FactoryGirl.create(:user)
   end
 
   describe 'GET #show' do
@@ -26,7 +26,7 @@ describe UsersController, type: :controller do
     context 'when a user is not logged in' do
       it 'redirects to login' do
         get :new, params: { id: @user.id }
-        expect(response).to redirect_to(new_user_session_path)
+        expect(response).to redirect_to('/login')
       end
     end # context user not logged in end
 
@@ -34,13 +34,12 @@ describe UsersController, type: :controller do
 
     context 'User cannot see other user page' do
       it "redirect to root path" do
-        get :show, params: { id: @user2.id }
+        get :show, params: { id: @user.id }
         expect(response).to redirect_to(root_path)
       end
 
     end # context user cannot see other user end
 
-    puts Rails.env
   end #describe end
   
 end #controller end

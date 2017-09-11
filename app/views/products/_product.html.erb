@@ -5,8 +5,11 @@
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
         <p><strong>$ <%= product.price %></strong></p>
+        
+        <div class="edit_links">
          <%= link_to 'Show', product %>
          <%= link_to 'Edit', edit_product_path(product) %>
          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
    </div>
 </div>
