@@ -2,9 +2,13 @@
    <div class= "product-col">
         <%= image_tag(product.image_url , class: "img-responsive") %>
         <h2><%= link_to product.name, product %></h2>
+        <% logger.debug "Product Name: #{product.name}"%>
         <p><%= product.description %></p>
+        <% logger.debug "Product Description: #{product.description}"%>
         <p><%= product.colour %></p>
+        <% logger.debug "Product Colour:  #{product.colour}"%>
         <p><strong>$ <%= product.price %></strong></p>
+        <% logger.debug "Product Price: #{product.price}"%>
         
         <div class="edit_links">
          <%= link_to 'Show', product %>
