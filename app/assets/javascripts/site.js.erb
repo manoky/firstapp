@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('.alert').delay(1600).fadeOut('slow');
-  $('#zoom_01').elevateZoom()
 });
 
 $(document).on('turbolinks:load', function(){
@@ -21,5 +20,6 @@ $(document).on('turbolinks:load', function(){
       return $(this).attr('data-score');
     }
   });
+  $('#zoom_01').elevateZoom()
 });
 
