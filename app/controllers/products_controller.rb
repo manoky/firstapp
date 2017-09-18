@@ -1,10 +1,15 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+   #Prevents users from editting products
+   before_action :must_be_admin, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index ]
+  
+  
 
   # GET /products
   # GET /products.json
   def index
-    byebug
+    #byebug
      if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
@@ -77,5 +82,10 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
+    end
+    def must_be_admin
+      unless current_user && current_user.admin?
+        redirect_to root_path, notice: 'You are not allowed to perform this action'
+      end
     end
 end
