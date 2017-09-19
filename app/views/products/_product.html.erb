@@ -1,19 +1,19 @@
-<div class="col-sm-2 col-md-4">
+<div class="col-sm-12 col-md-4">
    <div class= "product-col">
-        <%= image_tag(product.image_url , class: "img-responsive") %>
-        <h2><%= link_to product.name, product %></h2>
-        <% logger.debug "Product Name: #{product.name}"%>
-        <p><%= product.description %></p>
-        <% logger.debug "Product Description: #{product.description}"%>
-        <p><%= product.colour %></p>
-        <% logger.debug "Product Colour:  #{product.colour}"%>
-        <p><strong>$ <%= product.price %></strong></p>
-        <% logger.debug "Product Price: #{product.price}"%>
-        
-        <div class="edit_links">
-         <%= link_to 'Show', product %>
-         <%= link_to 'Edit', edit_product_path(product) %>
-         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+    <%= image_tag(product.image_url , class: "img-responsive") %>
+    <h2><%= link_to product.name, product %></h2>
+    <% logger.debug "Product Name: #{product.name}"%>
+    <p><%= product.description %></p>
+    <% logger.debug "Product Description: #{product.description}"%>
+    <p><%= product.colour %></p>
+    <% logger.debug "Product Colour:  #{product.colour}"%>
+    <p><strong>$ <%= product.price %></strong></p>
+    <% logger.debug "Product Price: #{product.price}"%>
+    
+    <p class="edit_links">
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
    </div>
 </div>

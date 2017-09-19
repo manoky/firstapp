@@ -1,9 +1,8 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.alert').delay(1600).fadeOut('slow');
 });
 
-$(document).on('turbolinks:load', function(){
-  $('.rating').raty();
+var refreshRating = function (){ $('.rating').raty();
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
@@ -20,6 +19,10 @@ $(document).on('turbolinks:load', function(){
       return $(this).attr('data-score');
     }
   });
+}
+
+$(document).on('turbolinks:load', function(){
+  refreshRating();
   $('#zoom_01').elevateZoom()
 });
 
