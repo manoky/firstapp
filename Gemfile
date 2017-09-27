@@ -72,6 +72,9 @@ gem 'kaminari'
 # Stripe payment processor gem
 gem 'stripe'
 
+# caching
+gem 'dalli'
+
 gem "brakeman", :require => false
 
 ruby "2.4.1"
