@@ -72,6 +72,9 @@ gem 'kaminari'
 # Stripe payment processor gem
 gem 'stripe'
 
+# redis gem
+gem 'redis-rails'
+
 # caching
 gem 'dalli'
 

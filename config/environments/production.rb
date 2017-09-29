@@ -98,6 +98,17 @@ Rails.application.configure do
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
+
+  config.cache_store = :dalli_store,
+  (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+  {:username => ENV["MEMCACHIER_USERNAME"],
+   :password => ENV["MEMCACHIER_PASSWORD"],
+   :failover => true,
+   :socket_timeout => 1.5,
+   :socket_failure_delay => 0.2,
+   :down_retry_delay => 60
+  }
+
   config.action_mailer.default_url_options = { host: 'https://bestberlinbikes.herokuapp.com' }
   config.assets.precompile += %w( *.css *.erb *.scss *.js *.coffee *.png *.jpg *.ico *.gif)
 end
