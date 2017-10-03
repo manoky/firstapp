@@ -72,7 +72,8 @@
   
        <%= render 'new_comment' %>
       </div>
-  <%= render 'comments' %>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+  <p><%= render 'comments' %></p>
 
   
   <%= paginate @comments %>

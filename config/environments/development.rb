@@ -55,6 +55,8 @@ Rails.application.configure do
   #Default development url
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   
+  # Restricting script files to pure javascritp
+  config.app_generators.javascript_engine = :javascript
   
 # Dalli config
   config.cache_store = :dalli_store,

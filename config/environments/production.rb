@@ -111,4 +111,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'https://bestberlinbikes.herokuapp.com' }
   config.assets.precompile += %w( *.css *.erb *.scss *.js *.coffee *.png *.jpg *.ico *.gif)
+
+
+  config.web_socket_server_url = "wss://bestberlinbikes.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://bestberlinbikes.herokuapp.com', 'http://bestberlinbikes.herokuapp.com']
 end
