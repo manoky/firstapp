@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
    #Prevents users from editting products
-  
+   before_action :must_be_admin, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index ]
   
   
