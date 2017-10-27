@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:email, rand(50)) { |n| "user#{n}@examplemail.com" }
+  sequence(:email, rand(100)) { |n| "user#{n}@examplemail.com" }
   factory :user do
     email 
     password "1234567890"

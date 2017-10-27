@@ -34,7 +34,7 @@ describe UsersController, type: :controller do
 
     context 'User cannot see other user page' do
       it "redirect to root path" do
-        get :show, params: { id: @user.id }
+        get :show, params:{ id: @user.id }
         expect(response).to redirect_to(root_path)
       end
 

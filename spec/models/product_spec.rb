@@ -4,9 +4,8 @@ require 'rails_helper'
 
 describe Product do
   
-  let(:product) { Product.create!(name:"Fast bike") }
-  let (:invalid) {Product.new(name: nil)} 
-  let(:user) { User.create!(email:"firstest@yahoo.com", password:"12345678") }
+  let(:product) { FactoryGirl.create!(:product) }
+  let(:user) { FactoryGirl.create!(:user)  }
 
   
   before do
@@ -20,9 +19,12 @@ describe Product do
   end
   
   it "when invalid name" do
-    expect(Product.new(description: "Nice bike")).not_to be_valid
+    expect(Product.new(name:" ", description: "Nice bike")).not_to be_valid
   end
 
-
+  it "when invalid description"do
+  expect(Product.new(description: "Nice bike")).not_to be_valid
+  end
+  
 end
 
