@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!
   def index
+    @orders=Order.all
+    @products = Product.all
+    @users = User.all
   end
 
   def show
@@ -14,5 +17,5 @@ class OrdersController < ApplicationController
 
   def destroy
   end
-  before_action :authenticate_user!
+  
 end

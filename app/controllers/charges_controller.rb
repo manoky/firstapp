@@ -6,13 +6,11 @@ class ChargesController < ApplicationController
     @product = Product.find(params[:product_id])
     @user = current_user
     @amount = (@product.price.to_i)*100
-    
+    token = params[:stripeToken]
 
 
     # Create the charge on Stripe's servers - this will charge the user's card
    begin
-    customer = StripeTool.create_customer(email: params[:stripeEmail], 
-    stripe_token: params[:stripeToken])
 
     charge = Stripe::Charge.create(
       :amount => @amount,
