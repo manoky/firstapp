@@ -1,4 +1,4 @@
-%# require 'rails_helper'
+ require 'rails_helper'
 
 describe ProductsController do
 
@@ -27,8 +27,9 @@ describe ProductsController do
 
     context "GET show" do
       it "renders :show template" do
-        get :show
-        expect(response).to have_http_status(200)
+        get :show, params: {id: product.id }
+        expect(response).to be_ok
+        expect(response).to render_template('show')
       end
 
       it "assigns requested product to Product" do
@@ -49,4 +50,3 @@ describe ProductsController do
     end
   end
 end
-#%>

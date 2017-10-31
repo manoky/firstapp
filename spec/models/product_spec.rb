@@ -4,8 +4,8 @@ require 'rails_helper'
 
 describe Product do
   
-  let(:product) { FactoryGirl.create!(:product) }
-  let(:user) { FactoryGirl.create!(:user)  }
+  let(:product) { FactoryGirl.create(:product) }
+  let(:user) { FactoryGirl.create(:user)  }
 
   
   before do
