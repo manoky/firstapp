@@ -19,7 +19,8 @@ class UserMailer < ApplicationMailer
       @user = user
       @product = product
       mail(to: user.email,
-      subject: "Thank you for purchasing #{@product.name}")
+      subject: "Order Confirmation #{@product.name}",
+      body:"Thank you for your purchase of #{@product.name}")
     end
 
 end

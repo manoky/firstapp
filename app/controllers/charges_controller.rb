@@ -4,6 +4,9 @@ class ChargesController < ApplicationController
   
   def create
     @product = Product.find(params[:product_id])
+
+    if user_signed_in?
+
     @user = current_user
     @amount = (@product.price.to_i)*100
     token = params[:stripeToken]
@@ -36,6 +39,12 @@ class ChargesController < ApplicationController
       flash[:error] = e.message
   end
   redirect_to product_path(@product)
+
+ else 
+  # @user = User.new(id:29) #Guest User 
+  flash[:alert] = "Please Login to complete the transaction"
+  redirect_to new_user_session_path
+ end
  end
  
 end
