@@ -1,25 +1,25 @@
 <% provide(:title,@product.name) %>
 <div class="container">
   <div class="row" data-product-id="<%= @product.id %>">
-    <div class="col-sm-6 col-md-6">
-      <div class="thumbnail thaumbnail-img-col">
-      
-      <% cache @product do %>
-      <%#====== product cache ====== %>
-       <%= image_tag(@product.image_url , class: "img-responsive",id:"zoom_01", alt:"product image") %>
+      <div class="col-sm-6 col-md-6">
+        <div class="thumbnail thaumbnail-img-col">
+          <% cache @product do %>
+        <%= image_tag(@product.image_url , class: "img-responsive",id:"zoom_01", alt:"product image") %>
         <div class="caption">
-          <h3>Name:<%= @product.name %></h3>
-          <%#====== redis views====== %>
-          <h6>  
-            Views:
-            <span class="badge">
-              <%= @product.views %>
-            </span>
-          </h6>
-          <%#====== redis views end ====== %>  
-        </div>
-      </div>
-    </div>
+        <h3>Name:<%= @product.name %></h3> <%# redis views  %>
+        <p> 
+          <%= link_to 'Edit', edit_product_path(@product),class:"btn btn-primary"%>
+          <%= link_to 'Back', products_path,class:"btn btn-primary"%>
+        </p>
+        <h6>  
+          Views:
+          <span class="badge">
+            <%= @product.views %>
+          </span>
+        </h6>
+        </div>  
+        </div><%# redis views end %>
+    </div><!--col end-->
     <% end %>
     <%# ====== cache end ========== %>
     <div class="col-sm-6 col-md-4">
@@ -27,25 +27,25 @@
         <!--comment ratings-->
         <p>
         <% if @product.comments.present? %>
-         <strong>Highest rating:</strong>
-          <%= @product.highest_rating_comment.rating %>
-          <%= @product.highest_rating_comment.body %>
+        <strong>Highest rating:</strong>
+        <%= @product.highest_rating_comment.rating %>
+        <%= @product.highest_rating_comment.body %>
         </p>
         <p>
-         <strong>Lowest rating:</strong>
-          <%= @product.lowest_rating_comment.rating %>
-          <%= @product.lowest_rating_comment.body %>
+        <strong>Lowest rating:</strong>
+        <%= @product.lowest_rating_comment.rating %>
+        <%= @product.lowest_rating_comment.body %>
         </p>
         <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">
         </p> 
         </div>
-         <!--======= comment end =========-->
-          <% else %>
+        <!-- comment end -->
+        <% else %>
         <% end %>
         <h3><span class="glyphicon glyphicon-usd"></span><%= @product.price %></h3>
         <div class= "product-color">
-         <strong>Color:</strong> 
-         <%= @product.colour %>
+          <strong>Color:</strong> 
+          <%= @product.colour %>
         </div>
         <div>
           <%= form_with(url: '/charges/create') do |form| %>
@@ -54,29 +54,19 @@
           <% end %>
         </div>
       </div>
-
-    </div><!--col end-->
+    </div><!--price col end-->
   </div><!--row end-->
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <h3>About Product</h3>
-      <p><%= @product.description %></p>
-    </div>
-  </div><!--row ends-->
+  <div>
+    <h3>About Product</h3>
+    <p><%= @product.description %></p>
+  </div>
+  <!--row ends-->
   <div class ="reviews">
-  
-       <%= render 'new_comment' %>
-      </div>
+    <%= render 'new_comment' %>
+  </div>
   <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
   <p><%= render 'comments' %></p>
-
-  
   <%= paginate @comments %>
-
-
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
-  
 </div><!--container end-->
 
 

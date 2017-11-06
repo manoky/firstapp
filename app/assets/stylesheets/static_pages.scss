@@ -66,64 +66,20 @@ html, body {
   color: #fff;
   
 }
+.carousel-inner {
+  margin-top: 60px;
+}
 // sticky footer ends here
 // ===============================================
 
 
-// custom navbar styles starts here
-// ===============================================
 
-.navbar-custom {
-	background-color:#333;
-  border-radius:0;
-	text-transform: uppercase;
-	height: 70px;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.05);
-}
-
-.navbar-custom .navbar-nav > li > a {
-  color:#fff;
-}
-
-.navbar-custom .navbar-nav > .active > a {
-  color: #fff;
-  background-color:#f45750;
-}
-
-.navbar-custom .navbar-nav > li > a:hover,
-.navbar-custom .navbar-nav > li > a:focus,
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus,
-.navbar-custom .navbar-nav > .open >a {
-  text-decoration: none;
-  background-color:transparent;
-	color: #f45750;
-}
-
-.navbar-custom .navbar-nav {
-	margin-right: 15px;
-}
-
-
-.navbar-custom .navbar-toggle {
-  background-color:#fff;
-	border: 1px solid #f45750;
-}
-
-.navbar-custom .icon-bar {
-  background-color:#f45750;
-}
-
-.navbar {
-  margin-bottom: 0px
-}
- 
 // carousel styles
 // ===============================================
 
 .carousel-inner>.item>img {
   margin: auto;
-  width: 1400px;
+  width: 100%;
 }
 
 .carousel-caption {
@@ -178,6 +134,6 @@ html, body {
   padding-left: 170px;
 }
 
-// .edit_links {
-//   display: none;
-// }
+.edit_links {
+  display: none;
+}
