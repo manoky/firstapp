@@ -1,18 +1,6 @@
 <% provide(:title, 'Products') %>
 
- <%if notice %>
-    <p class="alert alert-success" role="alert"><%= notice %></p>
-    <% end%>
-    <%if alert %>
-    <p class="alert alert-danger" role="alert"><%= alert %></p>
-    <% end %>
-   <h1>Products</h1>
-
-    <div class="row products-page">
-    <% cache(cache_key_for_products) do %>
-      <%= render @products %>
-    <% end %>
-    </div><!--/row-->
-  <hr />
-  <%= link_to 'New Product', new_product_path, class:"btn btn-primary"%>
+<% cache(cache_key_for_products) do %>
+  <%= render "products/product" %>
+<% end %>
 

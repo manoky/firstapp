@@ -9,25 +9,27 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale =1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
     <%= csrf_meta_tags %>
   </head>
-  <body data-target=".navbar">
-    <div class="page-wrap">
+  <body>
+  <div class="page-wrap" id="<%= controller.controller_name%>" >
     <!--navigation starts-->
     <%= render 'layouts/navbar'%>
+    <div class="<%= controller.controller_name%>">
+      <%if notice %>
+        <p class="alert alert-success" role="alert"><%= notice %></p>
+      <% end%>
+      <%if alert %>
+        <p class="alert alert-danger" role="alert"><%= alert %></p>
+      <% end %>
 
-    <%= yield %>
-     <!--flash notification tags-->
-     <%if notice %>
-    <p class="alert alert-success" role="alert"><%= notice %></p>
-    <% end%>
-    <%if alert %>
-    <p class="alert alert-danger" role="alert"><%= alert %></p>
-    <% end %>
-    <!--flash notification tags end-->
+      <%= yield %>
+    </div>
+    <!--flash notification tags-->
+  
     </div><!--page-wrap-->
   <footer class="footer">
     <div class="container">

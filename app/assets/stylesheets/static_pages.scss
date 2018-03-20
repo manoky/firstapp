@@ -4,13 +4,17 @@
 
 
 $font-stack:'Open Sans', sans-serif;
-$h-color: #f45750;
+// $h-color: #f45750;
 $p-color: #fff;
 
 h1, h2 {
-  color: $h-color;
+  color:  #413c3c;
   text-align: center;
+  font-family:$font-stack;
+}
 
+h2 {
+  font-size: 1.5em;
 }
 
 body {
@@ -19,23 +23,11 @@ body {
   color: #444;
 }
 
-h1 {
-  font: 2em $font-stack;
-  
- 
-}
-
-h2 {
-  font: 1.5em $font-stack;
-}
 
 .carousel-caption p {
   color:  $p-color;
 }
 
-.about-page p {
-  text-align: center;
-}
 
 // sticky footer style starts here
 // ===============================================
@@ -49,7 +41,7 @@ html, body {
 }
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -60px;
+  margin-bottom: -80px;
 }
 
 .page-wrap:after {
@@ -58,90 +50,55 @@ html, body {
 }
 
 .footer, .page-wrap:after{
-  height: 60px;
+  height: 80px;
 }
 
 .footer {
   background-color: #333;
   color: #fff;
+  padding: 20px;
   
 }
 // sticky footer ends here
 // ===============================================
 
-//page margins
-
-.carousel-inner {
-  margin-top: 50px;
-}
-
-.show-page{
-  margin-top: 50px;
-}
-
-
-
 
 // carousel styles
-// ===============================================
 
-.carousel-inner>.item>img {
-  margin: auto;
+.carousel {
   width: 100%;
+  padding: 80px;
+
+  .carousel-inner>.item>img {
+    margin: auto;
+    width: 80%;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px ;
+    h1 {
+      color: #f45750
+    }
+  }
+ 
 }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 2px ;
+
+.about-page {
+  text-align: center;
+  margin-top: 80px;
 }
 
-//devise views page-registration - sign in styles
-// ==============================================
+.contact-us {
+  padding: 80px;
+  h1 ,p {
+    margin-bottom: 20px;
+  }
 
-.form-signin {
-  max-width: 330px;
-  margin: auto;
-  padding: 15px;
-}
-
-.signup-btn {
-  background-color: #f45750;
-  color: #fff;
-}
-
-.signup-login-links {
-  position: relative;
-  left: 48%;
-}
-
-.btn-color-all {
-  background-color:#f45750;
-  color: #fff;
-}
-
-.form-signin input[type="email"],
-.form-signin input[type="password"]  {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 10px;
-  font-size: 16px;
-  position: relative;
-  height: auto;
-
-}
-
-.glyphicon-usd {
-  font-size: 0.9em;
-} 
-
-// stripe btn
-// ===============================================
-
-.stripe {
-  padding-left: 170px;
-}
-
-.edit_links {
-  display: none;
+  form {
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+  }
 }

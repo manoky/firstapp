@@ -79,5 +79,3 @@ gem 'redis-rails'
 gem 'dalli'
 
 gem "brakeman", :require => false
-
-ruby "2.4.1"

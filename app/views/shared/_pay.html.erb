@@ -1,0 +1,4 @@
+<%= form_with(url: '/charges/create') do |form| %>
+    <%= hidden_field_tag(:product_id, @product.id)%>
+    <%= render  "shared/stripe_checkout_button" %>
+<% end %>

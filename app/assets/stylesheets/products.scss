@@ -3,51 +3,137 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.products {
+  margin-top: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  
 
-// product image style and spacing
-.products-page {
-    padding: 0 20px;
-  p{
-    font-size: small;
-    text-align: center;
+  .row{
+    &:nth-child(2){
+      border-top: solid thin lightgray;
+      @media (max-width: 768px){
+        &:nth-child(2){
+          border: none;
+        }
+        
+        }
+    }
+   
+    .product-col {
+      padding: 10;
+
+      &:nth-child(2){
+        border-right: solid thin lightgray;
+        border-left: solid thin lightgray;
+         @media (max-width: 768px){
+          &:nth-child(2){
+            border: none;
+          }
+        }
+      }
+      
+      .product-img{
+        max-width: 240px;
+        margin: auto;
+        margin-top: 40px;
+        padding: 0;
+      }
+
+      .product-info {
+        margin:auto;
+        padding-bottom: 10px;
+        margin-left: 5%;
+       
+        h2{
+          margin-bottom: 5px;
+         font-weight: 500px;
+        
+          a:hover{
+            text-decoration: none;
+           
+          }
+
+        }
+
+        .rated {
+          margin-bottom: 15px;
+          margin-left: 35%;
+        }
+        .price {
+          font-size: 14px;
+          font-weight: bold;
+         text-align: center;
+        }
+       
+       
+      }
+
+
+    }
+    @media (max-width: 860px){
+      .product-col{
+        .product-img {
+          max-width: 180px;
+        }
+        /*centers product info on small screens */
+        .product-info{
+          h2 {
+            font-size: 10px;
+            font-weight: bold;
+          }
+          .price {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            
+          }
+          .add-cart{
+            .cart-btn{
+              font-size: 13px;
+            }
+          }
+        }
+      } 
+  
+    }
+    /* queries for lg screens position product info in the middle */
+    @media (min-width: 990px){
+      .product-col{
+        .product-info{
+          margin-left: 10%;
+        }
+      }
+    }
+    
   }
-  .row {
-    margin-bottom: 10px;
+
+
+  .product-show-page{
+    .product-overview {
+      padding: 50px;
+      #comments1 {
+        textarea {
+          width: 280px;
+          height: 96px;
+        }
+        label{
+          font-weight: normal;
+        }
+      }
+    }
+    .cart-rating {
+      position: relative;
+      top: 200px;
+      padding-left: 20px;
+      input[type="submit"]{
+        margin-top: 10px; 
+      }
+      h2 {
+        text-align: left;
+      }
+
+    }
   }
-  .product-col {
-    padding: 10px;
-    box-shadow: 1px 2px 5px rgba(51, 51, 51, 0.5);
-    margin-right: 10px;
-  }
-}
-
-// Product new edit styles
-
-//new product page style
-.back-btn {
-  position: relative;
-  left: 140px;
-  bottom: 43px;
-}
-//price column on product show page style
-
-.price-col {
-  padding-top: 245px;
-  background-color:#f2f8fd;
-  border: none;
-  box-shadow: none;
-}
-.thaumbnail-img-col,
-.price-col {
-  border: none;
-  box-shadow: none;
-
-}
-
-.product-color {
-  margin: 10px 0;
-}
-
-.form-width-size {
-  max-width: 330px;
+  
 }

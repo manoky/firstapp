@@ -22,11 +22,11 @@
 /node_modules
 /yarn-error.log
 
-.byebug_history
+/.byebug_history
 /public/system
 /public/assets/*
-.bundle
-.DS_Store
+/.bundle
+/.DS_Store
 /vendor/bundle/*
 /log/* 
 /redis/*

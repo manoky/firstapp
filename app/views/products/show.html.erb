@@ -1,71 +1,58 @@
 <% provide(:title,@product.name) %>
-<div class="container show-page">
+<div class="container product-show-page">
   <div class="row" data-product-id="<%= @product.id %>">
-      <div class="col-sm-6 col-md-6">
-        <div class="thumbnail thaumbnail-img-col">
-          <% cache @product do %>
-        <%= image_tag(@product.image_url , class: "img-responsive",id:"zoom_01", alt:"product image") %>
-        <div class="caption">
-        <h3>Name:<%= @product.name %></h3> <%# redis views  %>
-        <p> 
-          <%= link_to 'Edit', edit_product_path(@product),class:"btn btn-primary"%>
-          <%= link_to 'Back', products_path,class:"btn btn-primary"%>
-        </p>
-        <h6>  
-          Views:
-          <span class="badge">
-            <%= @product.views %>
-          </span>
-        </h6>
-        </div>  
-        </div><%# redis views end %>
-    </div><!--col end-->
-    <% end %>
-    <%# ====== cache end ========== %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail price-col">
-        <!--comment ratings-->
-        <p>
-        <% if @product.comments.present? %>
-        <strong>Highest rating:</strong>
-        <%= @product.highest_rating_comment.rating %>
-        <%= @product.highest_rating_comment.body %>
-        </p>
-        <p>
-        <strong>Lowest rating:</strong>
-        <%= @product.lowest_rating_comment.rating %>
-        <%= @product.lowest_rating_comment.body %>
-        </p>
-        <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">
-        </p> 
-        </div>
-        <!-- comment end -->
-        <% else %>
-        <% end %>
-        <h3><span class="glyphicon glyphicon-usd"></span><%= @product.price %></h3>
-        <div class= "product-color">
-          <strong>Color:</strong> 
-          <%= @product.colour %>
-        </div>
+
+    <div class="col-md-6">
+      <% cache @product do %>
+       <!-- product image -->
+      <%= image_tag(@product.image_url , class:"img-responsive",
+                              id:"zoom_01", alt:"product image") %>
+
+      <!-- product description and comments tabs #Bootstrap boilerplate -->
+      <div class="product-overview">
+        <h1> <%= @product.name %></h1>
+
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#description1" data-toggle="tab" role="tab">Description</a>
+          </li>
+          <li role="presentation">
+            <a href="#comments1" data-toggle="tab" role="tab">Reviews</a>
+          </li>
+        </ul>
+        <!-- tab contents for the above tabs #Bootstrap boilerplate -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="description1">
+            <hr>
+            <%= sanitize(@product.description) %>
+          </div>
+          <div class="tab-pane" id="comments1">
+            <!-- new comment form -->
+            <p><%= render 'new_comment' %></p>
+            <!-- render all comments -->
+            <p><%= render 'comments' %></p>
+            <div class="alert alert-info" style="display:none" role="alert">
+            A new comment was posted!
+            </div>
+            <%= paginate @comments %>
+          </div>
+        </div> <!-- tabs and contents ends here -->
+      </div> <!-- product overview-->
+      <% end %> <!-- end of caching -->
+    </div><!-- first col (prouct image,description and comments)-->
+
+    <!-- product payment, ratings and cart col -->
+    <div class="col-md-6">
+      <div class="cart-rating">
+        <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+        <h2><%=number_to_currency(@product.price) %></h2>
         <div>
-          <%= form_with(url: '/charges/create') do |form| %>
-          <%= hidden_field_tag(:product_id, @product.id)%>
-          <%= render  "shared/stripe_checkout_button" %>
-          <% end %>
+          <%= render 'shared/pay'%>
         </div>
       </div>
-    </div><!--price col end-->
+    </div>
+
   </div><!--row end-->
-  <div>
-    <h3>About Product</h3>
-    <p><%= @product.description %></p>
-  <div class ="reviews">
-    <%= render 'new_comment' %>
-  </div>
-  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-  <p><%= render 'comments' %></p>
-  <%= paginate @comments %>
-</div><!--row ends-->
 </div><!--container end-->
 
 

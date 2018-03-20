@@ -1,21 +1,35 @@
-<% cache product do%>
-<div class="col-sm-12 col-md-4">
-   <div class= "product-col">
-    <%= image_tag(product.image_url , class: "img-responsive") %>
-    <h2><%= link_to product.name, product %></h2>
-    <% logger.debug "Product Name: #{product.name}"%>
-    <p><%= product.description %></p>
-    <% logger.debug "Product Description: #{product.description}"%>
-    <p><strong>Colour : </strong><%= product.colour %></p>
-    <% logger.debug "Product Colour:  #{product.colour}"%>
-    <p><strong>$ <%= product.price %></strong></p>
-    <% logger.debug "Product Price: #{product.price}"%>
+<%@products.each_slice(3).each do |product| %>
+  <div class="row">
+    <% cache product do %>
+      <% product.each do |product| %>
+        <div class="col-sm-4 col-md-4 product-col">
+
+          <!-- product image -->
+          <%= link_to image_tag(product.image_url, class:"img-responsive product-img "),product %>
+  
+          <!-- product info -->
+          <div class="product-info">
+            <h2><%= link_to product.name, product %></h2>
+            <% if product.comments.present? %>
+              <div class="rated" id="average-rating" 
+                data-score="<%= product.average_rating %>">
+              </div>
+            <% end %>
+
+             <!-- product price and cart button -->
+            <div class="add-cart">
+                <p class="price">
+                  <%=number_to_currency(product.price) %>
+                </p>
+            </div>
+              
+          </div><!--/product-info end -->
+
+        </div>
+      <% end %>
+    <% end %>
     
-    <p class="edit_links">
-      <%= link_to 'Show', product %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-   </div>
-</div>
+  </div>
 <% end %>
+
+

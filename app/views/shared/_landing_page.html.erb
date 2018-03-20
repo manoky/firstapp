@@ -15,7 +15,7 @@
        <%= image_tag( product.image_url ) %>
       <div class="carousel-caption d-md-block">
        <h1><%= product.name %></h1>
-       <p><%= product.description %></p>
+       <p><%= truncate(strip_tags(product.description),length: 52) %></p>
       </div>
     </div>
     <% end %>
