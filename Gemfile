@@ -5,9 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   gem 'pg'
+# end
 
 #Devise gem for user authentication
 gem 'devise'
@@ -40,7 +40,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'pg'
+  #gem 'pg'
   gem "factory_girl_rails", "~> 4.0"
   gem 'rails-controller-testing'
   gem 'rspec-rails'
