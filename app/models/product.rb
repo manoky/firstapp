@@ -2,6 +2,10 @@ class Product < ApplicationRecord
   validates :name, presence: true
   has_many :orders
   has_many :comments
+  has_many :line_items
+
+  before_destroy :ensure_not_in_cart
+
 
   
 
@@ -32,4 +36,14 @@ class Product < ApplicationRecord
   # def viewed!
   #   $redis.incr("product:#{id}") 
   # end
+
+  private
+
+  def ensure_not_in_cart
+    unless line_items.empty?
+      errors.add(:base, 'Product in cart')
+      throw :abort
+    end
+  end
+
 end

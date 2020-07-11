@@ -1,5 +1,4 @@
 <% provide(:title, 'Products') %>
-
 <% cache(cache_key_for_products) do %>
   <%= render "products/product" %>
 <% end %>

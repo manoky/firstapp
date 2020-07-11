@@ -18,9 +18,10 @@
 
              <!-- product price and cart button -->
             <div class="add-cart">
-                <p class="price">
-                  <%=number_to_currency(product.price) %>
-                </p>
+              <p class="price">
+                <%=number_to_currency(product.price) %>
+              </p>
+              <%= button_to 'Add to cart', line_items_path(product_id: product) %>
             </div>
               
           </div><!--/product-info end -->

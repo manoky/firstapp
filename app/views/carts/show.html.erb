@@ -1,0 +1,41 @@
+<article>
+    <% provide(:title, 'Cart') %>
+    <h2>Cart</h2>
+    <table>
+        <tr>
+            <td>Quantity</td>
+            <td>Product</td>
+            <td>Price</td>
+        </tr>
+        <% @cart.line_items.each do | item | %>
+            <tr>
+                <td><%= item.quantity %></td>
+                <td><%= item.product.name %></td>
+                <td>
+                    <%= number_to_currency(item.total_price, unit: "€", delimeter: "") %>
+                </td>          
+            </tr>
+        <% end %>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total</th>
+                <td>
+                    <%= 
+                        number_to_currency(
+                            @cart.total_price,
+                            unit: "€",
+                            delimeter: ""
+                        )
+                    %>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <%= 
+        button_to 'Empty cart', @cart,
+        method: :delete,
+        data: { confirm: 'Are you dure'}
+    %> 
+    <%= button_to 'Back', products_path, method: :get %>
+</article>

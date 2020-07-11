@@ -5,9 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# group :production do
-#   gem 'pg'
-# end
+gem 'pg', '>= 0.18', '< 2.0'
 
 #Devise gem for user authentication
 gem 'devise'
