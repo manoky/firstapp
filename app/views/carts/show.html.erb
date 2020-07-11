@@ -13,7 +13,9 @@
                 <td><%= item.product.name %></td>
                 <td>
                     <%= number_to_currency(item.total_price, unit: "€", delimeter: "") %>
-                </td>          
+                </td>
+                <td> <i class="fas fa-times"></i></td>
+                <td> <i class="fas fa-redo"></i></td>
             </tr>
         <% end %>
         <tfoot>
@@ -35,7 +37,8 @@
     <%= 
         button_to 'Empty cart', @cart,
         method: :delete,
-        data: { confirm: 'Are you dure'}
-    %> 
-    <%= button_to 'Back', products_path, method: :get %>
+        data: { confirm: 'Are you dure'},
+         class:'btn btn-primary back-btn'
+    %>
+    <%= button_to 'Back', products_path, method: :get, class:'btn btn-default' %>
 </article>
